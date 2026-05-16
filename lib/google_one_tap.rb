@@ -15,7 +15,7 @@ module OmniAuth
 
       # There is no request phase for this strategy because it's implemented by the client-side google JS
       def request_phase
-        raise Middleware::OmniauthBypassMiddleware::AuthenticatorDisabled.new("Not exists")
+        [404, {}, ["Not Found"]]
       end
 
       # These are called after authentication has succeeded (From Google side!).
